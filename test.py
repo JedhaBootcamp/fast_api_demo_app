@@ -4,7 +4,7 @@ payload = {
    "content": "This is the body of my article",
    "Author": "Jaskier"
 }
-r = requests.post("http://localhost:4000/predict", json={
+r = requests.post("http://localhost:7860/predict", json={
   "YearsExperience": 0
 })
 print(r.content)

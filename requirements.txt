@@ -1,9 +1,7 @@
 fastapi[standard]
-#uvicorn[standard]
 pydantic 
 typing 
 pandas 
-#gunicorn 
 openpyxl 
 mlflow 
 boto3 

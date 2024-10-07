@@ -158,7 +158,3 @@ async def predict(predictionFeatures: PredictionFeatures):
     # Format response
     response = {"prediction": prediction.tolist()[0]}
     return response
-
-
-if __name__=="__main__":
-    uvicorn.run(app, host="0.0.0.0", port=4000)
