@@ -1,12 +1,9 @@
----
-title: Fast Api Demo
-emoji: 🐠
-colorFrom: blue
-colorTo: pink
-sdk: docker
-pinned: false
-license: apache-2.0
-short_description: Demo of an API built with FastAPI
----
+# Fast API Demo App 
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+Welcome to [Jedha](https://jedha.co) fast api demo app. Simply `git clone` this repository to checkout how to works. You can play around with it !
+
+Check out deployed app here: 
+
+* [Jedha demo api]()
+
+Enjoy 😎
