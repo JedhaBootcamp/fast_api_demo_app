@@ -145,7 +145,7 @@ async def predict(predictionFeatures: PredictionFeatures):
     years_experience = pd.DataFrame({"YearsExperience": [predictionFeatures.YearsExperience]})
 
     # Log model from mlflow 
-    logged_model = 'runs:/5e54b2ee620546b0914c9e9fbfd18875/salary_estimator'
+    logged_model = 'runs:/c09d09ef14e546b08f2f339d2c966da6/salary_estimator'
 
     # Load model as a PyFuncModel.
     loaded_model = mlflow.pyfunc.load_model(logged_model)
