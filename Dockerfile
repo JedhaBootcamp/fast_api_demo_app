@@ -19,17 +19,13 @@ ENV HOME=/home/user \
 # We set working directory to $HOME/app (<=> /home/user/app)
 WORKDIR $HOME/app
 
-# Install basic dependencies
-RUN pip install boto3 pandas gunicorn streamlit scikit-learn matplotlib seaborn plotly
+# Leverage caching 
+COPY requirements.txt /dependencies/requirements.txt
+RUN pip install -r /dependencies/requirements.txt
 
 # Copy all local files to /home/user/app with "user" as owner of these files
 # Always use --chown=user when using HUGGINGFACE to avoid permission errors
 COPY --chown=user . $HOME/app
 
-COPY requirements.txt /dependencies/requirements.txt
-RUN pip install -r /dependencies/requirements.txt
-
-COPY . $HOME/app
-
-CMD fastapi run app.py --port $PORT
+CMD ["fastapi run", "app.py", "--port $PORT"]
 # CMD gunicorn app:app --bind 0.0.0.0:$PORT --worker-class uvicorn.workers.UvicornWorker 
