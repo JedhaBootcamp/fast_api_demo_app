@@ -14,14 +14,14 @@ USER user
 # PATH environment variable sets paths to look for installed binaries
 # We update it so that Linux knows where to look for binaries if we were to install them with "user".
 ENV HOME=/home/user \
-    PATH=/home/user/.local/bin:$PATH
+	PATH=/home/user/.local/bin:$PATH
 
 # We set working directory to $HOME/app (<=> /home/user/app)
 WORKDIR $HOME/app
 
-# Leverage caching 
-COPY requirements.txt /dependencies/requirements.txt
-RUN pip install -r /dependencies/requirements.txt
+# Leverage layer caching: copy only reqs first
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 # Copy all local files to /home/user/app with "user" as owner of these files
 # Always use --chown=user when using HUGGINGFACE to avoid permission errors
