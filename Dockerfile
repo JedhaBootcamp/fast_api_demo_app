@@ -27,5 +27,5 @@ RUN pip install -r requirements.txt
 # Always use --chown=user when using HUGGINGFACE to avoid permission errors
 COPY --chown=user . $HOME/app
 
-CMD ["fastapi run", "app.py", "--port $PORT"]
+CMD ["fastapi", "run", "app.py", "--port $PORT"]
 # CMD gunicorn app:app --bind 0.0.0.0:$PORT --worker-class uvicorn.workers.UvicornWorker 
