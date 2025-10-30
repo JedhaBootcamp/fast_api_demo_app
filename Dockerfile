@@ -27,4 +27,4 @@ RUN pip install -r requirements.txt
 # Always use --chown=user when using HUGGINGFACE to avoid permission errors
 COPY --chown=user . $HOME/app
 
-CMD ["fastapi", "run", "app.py", "--port ${PORT}"]
+CMD ["bash","-lc","fastapi run app.py --host 0.0.0.0 --port ${PORT}"]
